@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{98DCEB53-843F-7BF8-2DC5-B3AE1907477B}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CentraEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\CentraEngine\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\CentraEngine\</IntDir>
+    <TargetName>CentraEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\CentraEngine\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\CentraEngine\</IntDir>
+    <TargetName>CentraEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86_64\CentraEngine\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\CentraEngine\</IntDir>
+    <TargetName>CentraEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ctpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CT_BUILD_DLL;CT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src\vendor;src;..\dependance\spdlog\include;..\dependance\SDL2\include;..\dependance\GL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;glew32s.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\dependance\SDL2\lib\x64;..\dependance\GL\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\CentraEngine\CentraEngine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\CentraEngine\CentraEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ctpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CT_BUILD_DLL;CT_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src\vendor;src;..\dependance\spdlog\include;..\dependance\SDL2\include;..\dependance\GL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;glew32s.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\dependance\SDL2\lib\x64;..\dependance\GL\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Release-windows-x86_64\CentraEngine\CentraEngine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\CentraEngine\CentraEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ctpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CT_BUILD_DLL;CT_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src\vendor;src;..\dependance\spdlog\include;..\dependance\SDL2\include;..\dependance\GL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;glew32s.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\dependance\SDL2\lib\x64;..\dependance\GL\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\CentraEngine\CentraEngine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\CentraEngine\CentraEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\CentraEngine\CentraEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\preset\RenderLight.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\GLObject.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Material\Material.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Model\Model.h" />
+    <ClInclude Include="src\Centra\Engine\Scene\ICamera.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\IGameObject.h" />
+    <ClInclude Include="src\Centra\Engine\Scene\Scene.h" />
+    <ClInclude Include="src\Centra.h" />
+    <ClInclude Include="src\Centra\Engine\GameEngine.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\GameObject.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\BufferLayout.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\IndexBuffer.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Material\Texture.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexArray.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexBuffer.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\IRender.h" />
+    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\Shader\Shader.h" />
+    <ClInclude Include="src\Centra\EntryPoint.h" />
+    <ClInclude Include="src\hgl.h" />
+    <ClInclude Include="src\Centra\utils\Log.h" />
+    <ClInclude Include="src\core.h" />
+    <ClInclude Include="src\ctpch.h" />
+    <ClInclude Include="src\vendor\glm\simd\common.h" />
+    <ClInclude Include="src\vendor\glm\simd\exponential.h" />
+    <ClInclude Include="src\vendor\glm\simd\geometric.h" />
+    <ClInclude Include="src\vendor\glm\simd\integer.h" />
+    <ClInclude Include="src\vendor\glm\simd\matrix.h" />
+    <ClInclude Include="src\vendor\glm\simd\packing.h" />
+    <ClInclude Include="src\vendor\glm\simd\platform.h" />
+    <ClInclude Include="src\vendor\glm\simd\trigonometric.h" />
+    <ClInclude Include="src\vendor\glm\simd\vector_relational.h" />
+    <ClInclude Include="src\vendor\stb_image\stb_image.h" />
+    <ClInclude Include="src\Centra\Engine\Display\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\preset\RenderLight.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Material\Material.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Model\Model.cpp" />
+    <ClCompile Include="src\Centra\Engine\Scene\ICamera.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\IGameObject.cpp" />
+    <ClCompile Include="src\Centra\Engine\Scene\Scene.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\GameObject.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\BufferLayout.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\IndexBuffer.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Material\Texture.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexArray.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexBuffer.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\IRender.cpp" />
+    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\Shader\Shader.cpp" />
+    <ClCompile Include="src\Centra\utils\Log.cpp" />
+    <ClCompile Include="src\ctpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\Centra\Engine\Display\Window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
