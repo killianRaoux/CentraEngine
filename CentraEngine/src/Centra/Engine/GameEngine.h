@@ -4,7 +4,8 @@ Header contenant les fonctions et variable general du moteur de jeu.
 #pragma once
 
 #include "ctpch.h"
-#include "GameObject/GameObject.h"
+#include "Object/GameObject/IGameObject.h"
+#include "Rendering/Render/Shader.h"
 #include "Scene/Scene.h"
 #undef main
 // TEST
@@ -54,7 +55,7 @@ namespace GameEngine
 
 	// Fonction de configuration:
 	void CT_API set_background(double red, double green, double blue, double alpha);
-	
+	CT_API Scene* get_current_scene();
 	//Fonction de fonctionnement
 	Shader*   get_shader(const std::string& name);
 	Texture*  get_texture(const std::string& name);

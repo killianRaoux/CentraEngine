@@ -41,9 +41,6 @@
     </ClInclude>
     <ClInclude Include="src\Centra.h" />
     <ClInclude Include="src\core.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\GameObject.h">
-      <Filter>Centra\Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="src\Centra\Engine\GameEngine.h">
       <Filter>Centra\Engine</Filter>
     </ClInclude>
@@ -82,35 +79,44 @@
     </ClInclude>
     <ClInclude Include="src\ctpch.h" />
     <ClInclude Include="src\hgl.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\IGameObject.h" />
     <ClInclude Include="src\Centra\Engine\Scene\Scene.h" />
-    <ClInclude Include="src\Centra\Engine\Scene\ICamera.h" />
     <ClInclude Include="src\Centra\Engine\Display\Window.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\BufferLayout.h">
+    <ClInclude Include="src\openGL.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Material\Material.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Material\Texture.h">
       <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\IndexBuffer.h">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexArray.h">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexBuffer.h">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Material\Material.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Model\Model.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Material\Texture.h">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\GLObject\GLObject.h" />
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\IRender.h">
+    <ClInclude Include="src\Centra\Engine\Rendering\Model\Model.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Render\preset\RenderLight.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Render\IRender.h">
       <Filter>Centra\Engine\GameObject\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\Shader\Shader.h">
+    <ClInclude Include="src\Centra\Engine\Object\GameObject\GameObject.h">
+      <Filter>Centra\Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Centra\Engine\Object\GameObject\IGameObject.h" />
+    <ClInclude Include="src\Centra\Engine\Object\Light\Light.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Object\BufferLayout.h">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Centra\Engine\Rendering\Object\GLObject.h" />
+    <ClInclude Include="src\Centra\Engine\Rendering\Object\IndexBuffer.h">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Centra\Engine\Rendering\Object\VertexArray.h">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Centra\Engine\Rendering\Object\VertexBuffer.h">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Centra\Engine\Rendering\Render\Shader.h">
       <Filter>Centra\Engine\GameObject\Render\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="src\Centra\Engine\GameObject\Rendering\Render\preset\RenderLight.h" />
+    <ClInclude Include="src\Centra\Engine\Object\GameObject\DynamicObject.h" />
+    <ClInclude Include="src\Centra\Engine\Object\GameObject\StaticObject.h" />
+    <ClInclude Include="src\Centra\Engine\Object\Camera\ICamera.h" />
+    <ClInclude Include="src\Centra\Engine\Object\Drive\IDrive.h" />
+    <ClInclude Include="src\Centra\Engine\Object\Drive\preset\RotationDrive.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Centra\Engine\GameEngine.cpp">
@@ -123,34 +129,36 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\ctpch.cpp" />
-    <ClCompile Include="src\Centra\Engine\GameObject\GameObject.cpp" />
-    <ClCompile Include="src\Centra\Engine\GameObject\IGameObject.cpp" />
     <ClCompile Include="src\Centra\Engine\Scene\Scene.cpp" />
-    <ClCompile Include="src\Centra\Engine\Scene\ICamera.cpp" />
     <ClCompile Include="src\Centra\Engine\Display\Window.cpp" />
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\BufferLayout.cpp">
+    <ClCompile Include="src\Centra\Engine\Rendering\Material\Material.cpp" />
+    <ClCompile Include="src\Centra\Engine\Rendering\Material\Texture.cpp">
       <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\IndexBuffer.cpp">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexArray.cpp">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\GLObject\VertexBuffer.cpp">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Material\Material.cpp" />
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Model\Model.cpp" />
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Material\Texture.cpp">
-      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\IRender.cpp">
+    <ClCompile Include="src\Centra\Engine\Rendering\Model\Model.cpp" />
+    <ClCompile Include="src\Centra\Engine\Rendering\Render\preset\RenderLight.cpp" />
+    <ClCompile Include="src\Centra\Engine\Rendering\Render\IRender.cpp">
       <Filter>Centra\Engine\GameObject\Render</Filter>
     </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\Shader\Shader.cpp">
+    <ClCompile Include="src\Centra\Engine\Object\Light\Light.cpp" />
+    <ClCompile Include="src\Centra\Engine\Rendering\Object\BufferLayout.cpp">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Centra\Engine\Rendering\Object\IndexBuffer.cpp">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Centra\Engine\Rendering\Object\VertexArray.cpp">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Centra\Engine\Rendering\Object\VertexBuffer.cpp">
+      <Filter>Centra\Engine\GameObject\Render\GLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Centra\Engine\Rendering\Render\Shader.cpp">
       <Filter>Centra\Engine\GameObject\Render\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="src\Centra\Engine\GameObject\Rendering\Render\preset\RenderLight.cpp" />
+    <ClCompile Include="src\Centra\Engine\Object\GameObject\DynamicObject.cpp" />
+    <ClCompile Include="src\Centra\Engine\Object\GameObject\StaticObject.cpp" />
+    <ClCompile Include="src\Centra\Engine\Object\Camera\ICamera.cpp" />
+    <ClCompile Include="src\Centra\Engine\Object\Drive\preset\RotationDrive.cpp" />
   </ItemGroup>
 </Project>

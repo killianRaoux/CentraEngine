@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Centra/Engine/GameEngine.h"
+#include "Centra/Engine/Object/GameObject/DynamicObject.h"
+#include "Centra/Engine/Object/Drive/preset/RotationDrive.h"
 
 /*
 TO EXPORT:

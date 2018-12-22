@@ -44,5 +44,5 @@ void main()
 {
 	// Couleur finale du pixel
 
-	out_Color = vec4(1.0, 1.0, 1.0, 1.0);//texture(u_texture, v_texCoord);
+	out_Color = texture(u_texture, v_texCoord);//texture(u_texture, v_texCoord);
 }

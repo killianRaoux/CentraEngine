@@ -306,5 +306,6 @@
     <None Include="res\shaders\BM3D.shader" />
     <None Include="res\shaders\basic2D.shader" />
     <None Include="res\shaders\light.shader" />
+    <None Include="res\shaders\color.shader" />
   </ItemGroup>
 </Project>

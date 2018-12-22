@@ -1,8 +1,8 @@
 #include "ctpch.h"
 #include "GameEngine.h"
-#include "GameObject/GameObject.h"
-#include "GameObject/Rendering/Render/preset/RenderLight.h"
-
+#include "Object/GameObject/GameObject.h"
+#include "Rendering/Render/preset/RenderLight.h"
+#include "openGL.h"
 
 void CT_API GameEngine::init(unsigned int width, unsigned int height)
 {
@@ -106,6 +106,11 @@ void CT_API GameEngine::set_background(double red, double green, double blue, do
 	background_green = green;
 	background_blue = blue;
 	background_alpha = alpha;
+}
+
+CT_API Scene* GameEngine::get_current_scene()
+{
+	return current_scene;
 }
 
 Shader* GameEngine::get_shader(const std::string& name)
